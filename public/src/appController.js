@@ -33,7 +33,7 @@ export default class AppController {
         const totalFiles = uploadingFiles.size
         file.percent = percent
         const total = [...uploadingFiles.values()]
-            .map(({ percent }) => percent ? ? 0)
+            .map(({ percent }) => percent ? 0 : 0)
             .reduce((total, current) => total + current, 0)
         this.viewManager.updateStatus(Math.round(total / totalFiles))
     }
